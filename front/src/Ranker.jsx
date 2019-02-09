@@ -90,6 +90,7 @@ class Ranker extends Component {
         />
         <ConnectionList 
         connections={this.state.connectionsArray}
+        handleChangeCurrentProfile={this.handleChangeCurrentProfile.bind(this)}
         sortConnectionsByName={this.sortConnectionsByName.bind(this)}
         sortConnectionsByWeight={this.sortConnectionsByWeight.bind(this)} 
         />

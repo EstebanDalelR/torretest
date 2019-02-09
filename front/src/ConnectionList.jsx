@@ -23,7 +23,7 @@ class ConnectionList extends Component {
     return this.props.connections.map((person, index) => {
       return (
         <TableRow key={index}>
-          <TableCell>{person.person.name}</TableCell>
+          <TableCell onClick={()=>this.props.handleChangeCurrentProfile(person.person.publicId)}>{person.person.name}</TableCell>
           <TableCell align="right">{Math.floor(person.person.weight)}</TableCell>
           <TableCell align="right">{person.person.stats.recommendations}</TableCell>
           <TableCell align="right">{person.person.stats.recommendationsSent}</TableCell>

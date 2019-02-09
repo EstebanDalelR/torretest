@@ -13,7 +13,7 @@ class Appbar extends Component {
     return (
       <AppBar position="static">
         <Toolbar>
-          <Typography variant="p" >
+          <Typography variant="body2" >
             <a href="https://github.com/EstebanDalelR/torretest" style={{color:"white"}}>View code on github</a>
           </Typography>
         </Toolbar>

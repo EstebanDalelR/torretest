@@ -20,11 +20,14 @@ class Ranker extends Component {
     // this.getUser()
   }
 
+  handleChangeCurrentProfile(newUser) {
+    this.setState({currentProfile: newUser}, this.getUser)
+  }
+
   getUser() {
     fetch(`https://torre.bio/api/bios/${this.state.currentProfile}`)
       .then(resp => {
-        console.log(resp)
-        this.setState({ userArray: resp.person })
+        this.setState({ userArray: resp.person }, this.getUserConnections)
       })
       .catch(error => console.error("sorry, something went wrong:" + error))
   }
@@ -32,7 +35,6 @@ class Ranker extends Component {
   getUserConnections () {
     fetch(`https://torre.bio/api/people/${this.state.currentProfile}/connections?limit=100`)
       .then(resp => {
-        console.log(resp)
         this.setState({ connectionsArray: resp.person })
       })
       .catch(error => console.error("sorry, something went wrong:" + error))

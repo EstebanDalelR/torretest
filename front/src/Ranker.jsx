@@ -38,6 +38,16 @@ class Ranker extends Component {
       .catch(error => console.error("sorry, something went wrong:" + error))
   }
 
+  sortConnectionsByWeight (){
+    this.setState(prevstate=>{
+      return {
+        connectionsArray: prevstate.connectionsArray.sort((first, second) =>{
+          return first.person.weight - second.person.weight
+        })
+      }
+    })
+  }
+
   render() {
     return (
       <Paper
@@ -58,7 +68,9 @@ class Ranker extends Component {
         education={this.state.userArray.stats.education}
         strengths={this.state.userArray.stats.strengths}
         />
-        <ConnectionList connections={this.state.connectionsArray} />
+        <ConnectionList 
+        connections={this.state.connectionsArray}
+         sortConnectionsByWeight={this.sortConnectionsByWeight.bind(this)} />
       </Paper>
     );
   }

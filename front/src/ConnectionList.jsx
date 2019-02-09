@@ -20,9 +20,9 @@ class ConnectionList extends Component {
   }
 
   renderRows() {
-    return this.props.connections.map(person => {
+    return this.props.connections.map((person, index) => {
       return (
-        <TableRow>
+        <TableRow key={index}>
           <TableCell>{person.person.name}</TableCell>
           <TableCell align="right">{Math.floor(person.person.weight)}</TableCell>
           <TableCell align="right">{person.person.stats.recommendations}</TableCell>
@@ -41,7 +41,7 @@ class ConnectionList extends Component {
         <TableHead>
           <TableRow>
             <TableCell>Name</TableCell>
-            <TableCell align="right">
+            <TableCell align="right" onClick={()=> this.props.sortConnectionsByWeight()}>
               <FitnessCenterIcon />
               Weight
             </TableCell>

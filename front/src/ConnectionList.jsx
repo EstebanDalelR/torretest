@@ -40,7 +40,7 @@ class ConnectionList extends Component {
       <Table>
         <TableHead>
           <TableRow>
-            <TableCell>Name</TableCell>
+            <TableCell onClick={()=> this.props.sortConnectionsByName()}>Name</TableCell>
             <TableCell align="right" onClick={()=> this.props.sortConnectionsByWeight()}>
               <FitnessCenterIcon />
               Weight

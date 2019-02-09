@@ -42,7 +42,25 @@ class Ranker extends Component {
     this.setState(prevstate=>{
       return {
         connectionsArray: prevstate.connectionsArray.sort((first, second) =>{
-          return first.person.weight - second.person.weight
+          return second.person.weight - first.person.weight
+        })
+      }
+    })
+  }
+
+  sortConnectionsByName (){
+    this.setState(prevstate=>{
+      return {
+        connectionsArray: prevstate.connectionsArray.sort((first, second) =>{
+          let nameA = first.person.name
+          let nameB = second.person.name
+          if (nameA < nameB) {
+            return -1;
+          }
+          if (nameA > nameB) {
+            return 1;
+          }
+          return 0;
         })
       }
     })
@@ -70,7 +88,9 @@ class Ranker extends Component {
         />
         <ConnectionList 
         connections={this.state.connectionsArray}
-         sortConnectionsByWeight={this.sortConnectionsByWeight.bind(this)} />
+        sortConnectionsByName={this.sortConnectionsByName.bind(this)}
+        sortConnectionsByWeight={this.sortConnectionsByWeight.bind(this)} 
+        />
       </Paper>
     );
   }

@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 
+import ProfileIcons from "./ProfileIcons"
+
 import Paper from '@material-ui/core/Paper';
 import Typography from '@material-ui/core/Typography';
 import TextField from '@material-ui/core/TextField';
@@ -26,10 +28,23 @@ class Ranker extends Component {
 
   render() {
     return (
-      <Paper>
-        <Typography variant="h4">
+      <Paper
+      style={{padding: "1.2em"}}>
+        <Typography variant="h6">
           Now viewing {this.state.userArray.person.name}
         </Typography>  
+        <TextField
+         variant="outlined"
+         label="Search by user"
+         margin="normal"
+         />
+        <ProfileIcons 
+        weight={this.state.userArray.person.weight}
+        recommendations={this.state.userArray.person.stats.recommendations}
+        jobs={this.state.userArray.stats.jobs}
+        education={this.state.userArray.stats.education}
+        strengths={this.state.userArray.stats.strengths}
+        />
       </Paper>
     );
   }

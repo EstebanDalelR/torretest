@@ -36,11 +36,12 @@ class Ranker extends Component {
         <TextField
          variant="outlined"
          label="Search by user"
-         margin="normal"
+         margin="dense"
          />
         <ProfileIcons 
         weight={this.state.userArray.person.weight}
         recommendations={this.state.userArray.person.stats.recommendations}
+        sent={this.state.userArray.person.stats.recommendationsSent}
         jobs={this.state.userArray.stats.jobs}
         education={this.state.userArray.stats.education}
         strengths={this.state.userArray.stats.strengths}

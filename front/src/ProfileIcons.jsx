@@ -5,9 +5,10 @@ import Tooltip from '@material-ui/core/Tooltip';
 
 import StarIcon from '@material-ui/icons/Star';
 import WorkIcon from '@material-ui/icons/Work';
-import CheckIcon from "@material-ui/icons/Check"
 import SchoolIcon from '@material-ui/icons/School';
+import CheckCicleIcon from "@material-ui/icons/CheckCircle"
 import FitnessCenterIcon from '@material-ui/icons/FitnessCenter';
+import CheckCicleOutlineIcon from "@material-ui/icons/CheckCircleOutline"
 
 class ProfileIcons extends Component {
   constructor(props) {
@@ -24,11 +25,18 @@ class ProfileIcons extends Component {
             label={Math.floor(this.props.weight)}
           />
         </Tooltip>
-        <Tooltip title="recommendations">
+        <Tooltip title="recommendations received">
           <Chip
-            icon={<CheckIcon />}
+            icon={<CheckCicleIcon />}
             variant="outlined"
             label={this.props.recommendations}
+          />
+        </Tooltip>        
+        <Tooltip title="recommendations sent">
+          <Chip
+            icon={<CheckCicleOutlineIcon />}
+            variant="outlined"
+            label={this.props.sent}
           />
         </Tooltip>
         <Tooltip title="jobs">

@@ -1,25 +1,24 @@
 
 const express = require('express')
 const app = express()
+var request = require('request')
 
 app.use('/', express.static('./front/build'))
 
-app.get('/getperson', (req, res) => {
-  let username = req.body.username
-  fetch(`https://torre.bio/api/bios/${username}`)
-    .then(resp => {
-      res.send(resp)
-    })
-    .catch(error => console.error('sorry, something went wrong:' + error))
+app.get('/getperson/:username', (req, res) => {
+  let username = req.params.username
+  request(`https://torre.bio/api/bios/${username}`, (error, response, body) => {
+    console.log(error)
+    res.send(body)
+  })
 })
 
-app.get('/getconnections', (req, res) => {
-  let username = req.body.username
-  fetch(`https://torre.bio/api/people/${username}/connections?limit=20`)
-    .then(resp => {
-      res.send(resp)
-    })
-    .catch(error => console.error('sorry, something went wrong:' + error))
+app.get('/getconnections/:username', (req, res) => {
+  let username = req.params.username
+  request(`https://torre.bio/api/people/${username}/connections?limit=20`, (error, response, body) => {
+    console.log(error)
+    res.send(body)
+  })
 })
 
 app.listen(3100)

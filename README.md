@@ -20,4 +20,4 @@ Testing, CI&CD.
 |11:30pm |Last few minutes of work, mostly readme and deployment|
 
 ### Deployment
-Currently hosted on
+Currently hosted on http://165.227.187.208:4000/

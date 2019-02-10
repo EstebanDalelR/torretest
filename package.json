@@ -1,0 +1,22 @@
+{
+  "name": "torretest",
+  "version": "1.0.0",
+  "description": "Shows a table of the connections of the current user, allowing the sort by weight, or name. As no info is currently available on other fields, these are left blank. YOu may navigate by clicking rows.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/EstebanDalelR/torretest.git"
+  },
+  "author": "estebandalelr",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/EstebanDalelR/torretest/issues"
+  },
+  "homepage": "https://github.com/EstebanDalelR/torretest#readme",
+  "dependencies": {
+    "express": "^4.16.4"
+  }
+}

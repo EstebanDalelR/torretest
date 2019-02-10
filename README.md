@@ -11,11 +11,13 @@ In the back a small node and express server.
 Testing, CI&CD.
 
 ### Timeline
-|2pm |Began working
-|5pm |food break (35min)
-|6:30pm |Unexpected visit(around 30 min)
-|8pm |Airport trip
-|11:30pm |Last few minutes of work, mostly readme and deployment
+|Time|Work done|
+|-------|-------|
+|2pm |Began working|
+|5pm |food break (35min)|
+|6:30pm |Unexpected visit(around 30 min)|
+|8pm |Airport trip|
+|11:30pm |Last few minutes of work, mostly readme and deployment|
 
 ### Deployment
 Currently hosted on
